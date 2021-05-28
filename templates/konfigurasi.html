@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<section class="content">
+    <div class="box box-primary">
+    <div class="box-header with-border">
+            	<center>
+            		<h3 class="box-title">Konfigurasi Email</h3>
+            	</center>
+            </div>
+        <div class="box-body">
+                <table>
+                    <tr>
+                        <td>Email User&nbsp;</td>
+                        <td>:&nbsp;{{ email_user }}</td>
+                    </tr>
+                    <tr>
+                        <td>Server SMTP&nbsp;</td>
+                        <td>:&nbsp;{{ smtp_server }}</td>
+                    </tr>
+                    <tr>
+                        <td>Port SMTP&nbsp;</td>
+                        <td>:&nbsp;{{ mail_port }}</td>
+                    </tr>
+                    <tr>
+                        <td>TLS</td>
+                        <td>:&nbsp;{{ tls }}</td>
+                    </tr>
+                    <tr>
+                        <td>SSl&nbsp;</td>
+                        <td>:&nbsp;{{ ssl }}</td>
+                    </tr>
+                </table>
+        </div>
+        <div class="box-footer">
+            <a href="/ubahkonf"><button type="button" class="btn btn-default">Ubah</button></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

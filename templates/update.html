@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content%}
+      <div class="container">  
+        <section class="content">
+          <div class="box box-info">
+            <div class="box-header with-border">
+              	<center>
+	              	<h3 class="box-title">Update Pertanyaan dan Jawaban</h3>
+	            </center>
+            </div>
+
+            <form class="form-horizontal" method="POST" action="/updatequest">
+            {% for row in data %}
+              <div class="box-body">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Pertanyaan</label>
+
+                  <div class="col-sm-8">
+                    <!-- <input name="pertanyaan" value="{{ row['pertanyaan'] }}" type="text" class="form-control" placeholder="Name" autocomplete="off" required> -->
+                    <textarea name="pertanyaan" class="form-control" required>{{ row['pertanyaan'] }}</textarea>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Jawaban</label>
+
+                  <div class="col-sm-8">
+                    <!-- <input name="jawaban" value="{{ row['jawaban'] }}" type="text" class="form-control" placeholder="Phone Number" autocomplete="off" required> -->
+                    <textarea name="jawaban" class="form-control" required>{{ row['jawaban'] }}</textarea>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">penjawab</label>
+
+                  <div class="col-sm-2">
+                    <input name="penjawab" value="{{ row['penjawab'] }}" type="text" class="form-control" placeholder="Address" autocomplete="off" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-footer">
+                <a href="/indexadmin"><button type="button" class="btn btn-default">Cancel</button></a>
+                <input name="update" type="submit" class="btn btn-info pull-right" value="Update">
+              </div>
+             {% endfor %}
+            </form>
+          </div>
+        </section>
+      </div>
+    {% endblock content %}
+

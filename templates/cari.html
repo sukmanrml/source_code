@@ -1,0 +1,27 @@
+{% extends "layout1.html" %}
+{% block content %}
+    <div class="content-section mt-4">
+        <form method="POST" action="/addquest">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Form pertanyaan</legend>
+                <div class="form-group">
+                    <label>Pertanyaan</label>
+                    <input name="tanya" type="text" class="form-control form-control-lg" placeholder="Masukkan Pertanyaan">
+                </div>
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input name="nama" type="text" class="form-control form-control-lg" placeholder="Masukkan Nama Lengkap">
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input name="email" type="email" class="form-control form-control-lg" placeholder="Masukkan Email">
+                    <small id="emailHelp" class="form-text text-muted">Kerahasiaan alamat email terjamin.</small>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <input name="savecari" type="submit" class="btn btn-primary" value="submit">
+            </div>
+        </form>
+        {{ e }}
+    </div>
+{% endblock content %}
